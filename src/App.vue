@@ -1,30 +1,42 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+  <Navbar />
+  <Header />
   <router-view />
 </template>
 
+<script>
+import Navbar from "@/components/Navbar.vue";
+import Header from "@/components/Header.vue";
+
+export default {
+  components: {
+    Navbar,
+    Header,
+  },
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+body {
+  background-color: #f5f5f5;
 }
 
-#nav {
-  padding: 30px;
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #bbbbbb;
+  border-radius: 10px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 </style>
